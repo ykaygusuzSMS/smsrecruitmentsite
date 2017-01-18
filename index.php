@@ -10,10 +10,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 echo "Connected successfully <br>";
 
-$sql = "SELECT * FROM questions WHERE id<10";
+$sql = "SELECT * FROM questions";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
