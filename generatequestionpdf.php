@@ -11,6 +11,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<?php include ('index.php'); ?>
 <script type="text/javascript">
 
 <!-- GeneratePDF -->
@@ -95,23 +96,32 @@ doc.save("Test.pdf");
     <th>Question</th>
     <th>Category</th>
     <th>Sub-Category</th>
-    <tr>
-      <td >
-          <div class="checkbox" >
-            <label>
-              <input type="checkbox" style="width:100%" >
-            </label>
-      </td>
-      <td>
-          <p>Question 1</p>
-      </td>
-      <td>
-          <p>Category 1</p>
-      </td>
-      <td>
-          <p>Sub-Category 1</p>
-      </td>
-    </tr>
+
+      <?php
+      foreach ($rows as $row) {
+          echo "
+          <tr>
+            <td >
+                <div class="checkbox" >
+                  <label>
+                    <input type="checkbox" style="width:100%" >
+                  </label>
+            </td>
+          <td>
+              <p>$row['question']</p>
+          </td>
+          <td>
+              <p>$row['competency']</p>
+          </td>
+          <td>
+              <p>$row['subcategory']</p>
+          </td>
+          </tr>"
+        }
+      ?>
+
+
+
 
   </table>
 </div>
