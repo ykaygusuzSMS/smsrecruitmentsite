@@ -5,13 +5,12 @@ $dbConfig=array();
 while(!feof($myfile)) {
   $line=fgets($myfile);
   $dbConfig[]=$line;
-  echo $line . "<br>";
 }
 fclose($myfile);
-$servername = "localhost";
-$username = "root";
-$password = "deal97-manic";
-$dbname = "recruitment";
+$servername = $dbConfig[0];
+$username = $dbConfig[1];
+$password = $dbConfig[2];
+$dbname = $dbConfig[3];
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
