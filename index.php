@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 }
 $sql = "SELECT * FROM questions";
 $result = $conn->query($sql);
-$rows=[]
+$rows=[];
 while($row = $result->fetch_array($result))
 {
     $rows[] = $row;
